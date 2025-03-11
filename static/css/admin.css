@@ -1,0 +1,166 @@
+@import url("_variables.css");
+
+main {
+    padding: 3rem;
+    background-color: var(--colorBgMain);
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: var(--colorBgMain);
+}
+
+h1 {
+    font-size: var(--headerFont);
+}
+
+h2 {
+    margin: 2rem 0;
+    font-size: var(--fontSizeSubHeader);
+}
+
+h3 {
+    text-align: center;
+    color: var(--colorMain);
+    font-size: var(--fontSizeBody);
+    font-family: var(--bodyFont);
+}
+
+.admin-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.admin-actions>button {
+    display: inline-block;
+    justify-content: center;
+    background-color: var(--accentColor);
+    color: var(--colorComplementary);
+    margin: 1rem;
+    font-size: 1rem;
+    border-radius: var(--buttonBorder);
+    width: 150px;
+    padding: 0.75rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-actions>button:hover {
+    background-color: var(--colorHover);
+}
+
+/* Popup Styling */
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorShadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: var(--colorBgMain);
+    padding: 3rem;
+    border-radius: var(--buttonBorder);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content input,
+.popup-content button {
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+}
+
+.popup-content input {
+    margin: 0.75rem 0;
+    padding: 0.75rem;
+    font-size: var(--fontSizeBody);
+    border: none;
+    border-radius: var(--buttonBorder);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#closeButton{
+    background-color: var(--colorBgMain);
+    color: var(--colorBgMain);
+    border: none;
+    border-radius: var(--buttonBorder);
+}
+
+#popup.hidden {
+    display: none;
+}
+
+.admin-lists {
+    margin-top: 2rem;
+}
+
+.admin-list {
+    background-color: var(--colorComplementary);
+    border-radius: var(--buttonBorder);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+
+/* Book card styling */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+
+    .book-article {
+        background: var(--colorBgMain);
+        border-radius: 8px;
+        box-shadow: var(--colorShadow);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.2s ease;
+    }
+
+    .book-article:hover {
+        transform: translateY(-5px);
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .book-cover-ctn img {
+        max-width: 100%;
+        height: auto;
+        border-bottom: 1px solid var(--colorComplementary);
+    }
+
+    .authorYearCtn {
+        font-size: 14px;
+        color: var(--colorMain);
+    }
+
+    .book-divider {
+        height: 2px;
+        width: 90%;
+        background: var(--colorComplementary);
+        margin: 10px auto;
+    }
+}

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    /* *********** Typography & Fonts *********** */
+    --headerFont: 'Playfair Display', serif;
+    --bodyFont: 'Lato', sans-serif;
+    --fontSizeHeader: 4rem;
+    --fontSizeSubHeader: 2.5rem;
+    --fontSizeBody: 1.125rem;
+    --fontSizeLink: 1.5rem;
+
+    /* *********** Colors *********** */
+    --colorMain: #353533; 
+    --colorBgMain: #F0EDE1; 
+    --colorComplementary: #FCFBF5;
+    --accentColor: #2E5275;
+    --colorShadow: #0000003f;
+    --colorRatings: #ffbc35;
+    --colorHover: #3B6A99;
+    --colorBorder: #ccc;
+
+    /* *********** Margins & Paddings *********** */
+    --mainMargin: 3.125rem;
+    --smallMargin: 1.5rem;
+    --mainPadding: 3.125rem;
+    --smallPadding: 1.5rem;
+    --tinyPadding: 0.5rem;
+    --buttonPadding: 0.6rem 1.25rem;
+
+    /* *********** Borders & Buttons *********** */
+    --buttonBorder: 0.25rem;
+    --infoCardRadius: 25px;
+
+    --inputHeight: 0.5rem;
+
+    
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/temp_nav.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/author_search.css">
+    <!-- Mark the scripts as modules -->
+    <script src="static/js/searchAuthor.js" type="module" defer></script>
+    <script src="static/js/fetchAuthors.js" type="module" defer></script>
+    <script src="static/js/apiFetchRequest.js" type="module" defer></script>
+    <script src="static/js/bookDetails.js" type="module" defer></script>
+    <title>Authors ⎪ The Book Corner</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html"><img src="static/img/uxlogo.png" alt="Logo" /></a>
+                <p>The Book Corner</p>
+            </div>
+    
+            <!-- Burger menu icon -->
+            <div class="burger-menu" id="burger-menu">
+                &#9776; <!-- Unicode for burger-icon -->
+            </div>
+    
+            <!-- Navigation links -->
+            <ul class="nav-links" id="nav-links">
+                <div class="links">
+                    <li><a href="books.html" class="nav-hover">Books</a></li>
+                    <li><a href="authors.html" class="nav-hover">Authors</a></li>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-outline">Login</a>
+                    <a href="signup.html" class="btn-outline">Sign Up</a>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <section class="search">
+            <input href="#" id="searchInput" type="text" placeholder="Search for Author"/>
+        </section>
+    </header>
+
+    <main>
+        <section id="authorResults"></section>
+        <section id="booksResults"></section>
+    </main>
+</body>
+</html>

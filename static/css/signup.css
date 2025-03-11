@@ -1,0 +1,122 @@
+@import url("_variables.css");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--colorBgMain);
+    p, a, button{
+        font-family: var(--bodyFont);
+        font-size: var(--fontSizeBody);
+    }
+    h1{
+        font-family: var(--headerFont);
+        font-size: var(--fontSizeSubHeader);
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        #signup{
+            margin: var(--mainMargin) 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            box-shadow: 0 1px 2px 0 var(--colorShadow), 0 0 1px 0 var(--colorShadow);
+            background-color: var(--colorComplementary);
+            padding: var(--mainPadding) var(--smallPadding);
+            border-radius: var(--buttonBorder);
+            header{
+                h1{
+                    margin-bottom: var(--mainMargin);
+                    color: var(--mainBlue);
+                }
+            }
+            form{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .signup_inputs{
+                    width: 100%;
+                    label{
+                        display: block;
+                        font-family: var(--bodyFont);
+                        font-size: var(--fontSizeBody);
+                        color: var(--colorMain);
+                    }
+                    input{
+                        width: 100%;
+                        border-radius: var(--buttonBorder);
+                        padding: var(--inputHeight) 0;
+                        border: none;
+                        margin-bottom: var(--smallMargin);
+                        font-size: var(--bodyFont);
+                        box-shadow: 0 1px 2px 0 var(--colorShadow), 0 0 1px 0 var(--colorShadow);
+                    }
+                }
+            }
+            button{
+                padding: var(--buttonPadding);
+                border-radius: var(--buttonBorder);
+                background-color: var(--accentColor);
+                color: var(--colorBgMain);
+                border: none;
+                width: 80%;
+            }
+            .login_link{
+                display: flex;
+                flex-direction: row;
+                margin-top: var(--mainMargin);
+                justify-content: center;
+                a{margin-left: 0.5rem;}
+                color: var(--colorMain);
+
+            }
+        }
+    }
+        /* ********************** tablet small ********************** */
+        @media (min-width:767px){
+            main{
+                #signup{
+                    width: 60%;
+                }
+            }
+        }
+    
+        /* ********************** Big small ********************** */
+        @media (min-width:1024px){
+            main{
+                #signup{
+                    width: 70%;
+                    form{
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        .signup_inputs{
+                            width: 48%;
+                        }
+                    }
+                    button{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        /* ********************** Desktop ********************** */
+        @media (min-width:1220px){
+            main{
+                #signup{
+                    width: 55%;
+                }
+            }
+        }
+}

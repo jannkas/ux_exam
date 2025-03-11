@@ -1,0 +1,180 @@
+@import url(./_variables.css);
+ 
+body {
+    font-family: var(--bodyFont);
+    margin: 0;
+    padding: 0;
+    background-color: var(--colorBgMain);
+    color: var(--colorMain);
+}
+ 
+/* Back arrow styling */
+.back-arrow {
+    position: absolute;
+    top: 20px; /* Placering fra toppen */
+    left: 20px; /* Placering fra venstre */
+    font-size: 24px; /* Størrelse på ikonet */
+    color: var(--accentColor); /* Brug accentfarve */
+    text-decoration: none; /* Fjern understregning */
+    transition: color 0.3s ease; /* Tilføj hover-animation */
+}
+ 
+.back-arrow:hover {
+    color: var(--dangerColor); /* Skift farve ved hover */
+}
+ 
+h2, h3, h4 {
+    font-family: var(--headerFont);
+    font-size: var(--fontSizeSubHeader);
+    margin: 0;
+    padding: var(--tinyPadding) 0;
+    text-align: center;
+}
+ 
+a {
+    text-decoration: none;
+    color: var(--colorMain);
+}
+ 
+/* Main layout */
+.user-main {
+    max-width: 600px;
+    margin: var(--mainMargin) auto;
+    padding: var(--mainPadding);
+    background: var(--colorComplementary);
+    border-radius: var(--infoCardRadius);
+    box-shadow: 0 1px 2px 0 var(--colorShadow), 0 0 1px 0 var(--colorShadow);
+ 
+}
+ 
+/* Profile titles */
+#profile-titles {
+    margin-bottom: var(--mainMargin);
+    text-align: center;
+}
+ 
+#your-name-title {
+    font-size: var(--fontSizeSubHeader);
+    font-weight: bold;
+    color: var(--accentColor);
+}
+ 
+.member-since {
+    font-size: var(--fontSizeBody);
+    color: var(--lightBlue);
+}
+ 
+/* Profile form styles */
+.profile-form-section {
+    margin-top: var(--mainMargin);
+}
+ 
+form#user-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smallMargin);
+}
+ 
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.input-group label {
+    font-size: var(--fontSizeBody);
+    font-weight: bold;
+    margin-bottom: var(--tinyPadding);
+    color: var(--accentColor);
+}
+ 
+.input-group input {
+    padding: var(--tinyPadding);
+    font-size: var(--fontSizeBody);
+    border: 1px solid var(--lightBlue);
+    border-radius: var(--infoCardRadius);
+    outline: none;
+    transition: border-color 0.3s;
+    height: calc(var(--inputHeight) + 2rem);
+}
+ 
+.input-group input:focus {
+    border-color: var(--colorRatings);
+}
+ 
+/* Buttons */
+.edit-profile-btn {
+    padding: var(--buttonPadding);
+    font-size: var(--fontSizeBody);
+    background-color: var(--accentColor);
+    color: var(--colorBgMain);
+    border: none;
+    border-radius: var(--infoCardRadius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+ 
+/* Delete profile link */
+#dlt-profile {
+    margin-top: var(--mainMargin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fontSizeBody);
+    cursor: pointer;
+}
+ 
+/* Media Queries */
+@media (max-width: 768px) {
+    .user-main {
+        max-width: 90%;
+        padding: var(--smallPadding);
+    }
+ 
+    h2, h3, h4 {
+        font-size: var(--fontSizeBody);
+    }
+ 
+    form#user-form {
+        gap: var(--tinyPadding);
+    }
+ 
+    .input-group input {
+        height: calc(var(--inputHeight) + 1.5rem);
+    }
+ 
+    .edit-profile-btn {
+        font-size: var(--fontSizeSmall);
+        padding: var(--smallPadding);
+    }
+}
+ 
+@media (max-width: 480px) {
+    .user-main {
+        max-width: 100%;
+        margin: var(--tinyMargin);
+        padding: var(--tinyPadding);
+    }
+ 
+    h2, h3, h4 {
+        font-size: var(--fontSizeSmall);
+    }
+ 
+    .input-group label {
+        font-size: var(--fontSizeSmall);
+    }
+ 
+    .input-group input {
+        font-size: var(--fontSizeSmall);
+        padding: var(--tinyPadding);
+        height: calc(var(--inputHeight) + 1rem);
+    }
+ 
+    .edit-profile-btn {
+        font-size: var(--fontSizeTiny);
+        padding: var(--tinyPadding);
+    }
+ 
+    #dlt-profile {
+        font-size: var(--fontSizeTiny);
+    }
+}

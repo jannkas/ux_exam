@@ -1,0 +1,269 @@
+@import url("_variables.css");
+ 
+*{
+    margin: 0;
+    padding: 0;
+}
+ 
+body{
+    background-color: var(--colorBgMain);
+    h3, p, a, button, em, th, td{
+        font-family: var(--bodyFont);
+        font-size: var(--fontSizeBody);
+        
+    }
+    h2{
+        font-family: var(--headerFont);
+        font-size: var(--fontSizeSubHeader);
+        color: var(--colorMain);
+    }
+ 
+    main{
+        display: flex;
+        justify-content: space-between;
+        margin: var(--smallMargin);
+ 
+ 
+        .loaned-books{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 65%; /* Tilpasset bredde for højre panel */
+            header{
+                margin-bottom: var(--smallMargin);
+            }
+            table{
+                border-collapse: collapse;
+                border: none;
+                width: 100%;
+                th{
+                    padding: var(--tinyPadding);
+                    background-color: var(--accentColor);
+                    text-align: left;
+                    color: var(--colorBgMain);
+                }
+                .book-author-header{
+                    display: none;
+                }
+                .book-title-header{
+                    width: 65%;
+                }
+                tbody{
+                    background-color: var(--colorComplementary);
+                    td{padding: var(--tinyPadding);}
+                    color: var(--colorMain);
+                    .book-author{
+                        display: none;
+                    }
+                }
+            }
+        }
+ 
+        .user-profile{
+            background-color: var(--colorComplementary);
+            padding: 50px; /* Øget padding for at gøre boksen højere */
+            border-radius: var(--smallRadius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-radius: var(--infoCardRadius);
+ 
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin-bottom: 15px; /* Øget margin for spacing */
+            }
+ 
+            h2{
+                font-family: var(--headerFont);
+                font-size: var(--fontSizeSubHeader);
+                color: var(--colorMain);
+                margin: 10px 0; /* Mere spacing omkring overskriften */
+            }
+ 
+            h4 {
+                font-family: var(--bodyFont);
+                font-size: 16px;
+                color: var(--colorSecondary);
+                margin: 10px 0; /* Øget spacing omkring teksten */
+            }
+ 
+            p{
+                font-family: var(--bodyFont);
+                font-size: var(--fontSizeBody);
+                color: var(--colorSecondary);
+                margin: var(--tinyMargin) 0;
+            }
+ 
+            .button-group {
+                display: flex;
+                justify-content: center;
+                gap: 20px; /* Mere afstand mellem knapperne */
+                margin-top: 20px; /* Lidt ekstra spacing ovenover knapperne */
+            }
+ 
+            button{
+                padding: var(--tinyPadding) var(--smallPadding);
+                font-family: var(--bodyFont);
+                font-size: var(--fontSizeBody);
+                border: none;
+                border-radius: var(--infoCardRadius);
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                background-color: var(--accentColor);
+                color: var(--colorBgMain);
+ 
+ 
+            }
+ 
+            .edit-profile{
+                background-color: var(--accentColor);
+ 
+            }
+ 
+ 
+ 
+            .delete-profile{
+                background-color: var(--dangerColor);
+                color: var(--accentColor);
+            }
+ 
+            .delete-profile:hover{
+                background-color: var(--dangerHover);
+            }
+        }
+    }
+ 
+    /* ********************** Small tablet ********************** */
+    @media (min-width:767px){
+        main{
+            .loaned-books{
+                table{
+                    .book-author-header{
+                        display: block;
+                    }
+                    .book-title-header{
+                        width: 40%;
+                    }
+                    .book-days-header{
+                        width: 20%;
+                    }
+                    tbody{
+                        .book-author{
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+ 
+    /* ********************** Desktop ********************** */
+    @media (min-width:1220px){
+        main{
+            .loaned-books{
+                table{
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+ 
+/* ********************** Tablet ********************** */
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+ 
+        .user-profile {
+            width: 100%; /* Fylder hele bredden */
+            order: 1; /* Sørger for, at den vises først */
+        }
+ 
+        .loaned-books {
+            width: 100%;
+            order: 2; /* Sørger for, at den vises bagefter */
+        }
+    }
+}
+ 
+/* ********************** Mobil ********************** */
+@media (max-width: 767px) {
+    main {
+        flex-direction: column; /* Elementer stables vertikalt */
+        align-items: center; /* Centrerer indholdet */
+        gap: 20px; /* Mere afstand mellem sektioner */
+ 
+        .user-profile {
+            width: 90%; /* Fylder det meste af skærmen */
+            padding: 30px; /* Reduceret padding for mobilversionen */
+            margin-bottom: 20px; /* Lidt ekstra luft under boksen */
+        }
+ 
+        .user-profile img {
+            width: 80px; /* Reduceret billedstørrelse for at passe til mobil */
+            height: 80px;
+        }
+ 
+        .user-profile h2 {
+            font-size: 20px; /* Justeret til en mere passende skriftstørrelse */
+        }
+ 
+        .user-profile h4 {
+            font-size: 14px;
+            margin: 5px 0; /* Mindre margin for tættere layout */
+        }
+ 
+        .button-group {
+            flex-direction: column; /* Knapper placeres i en kolonne på mobil */
+            gap: 10px; /* Mindre afstand mellem knapper */
+        }
+ 
+        button {
+            width: 100%; /* Knapper fylder hele bredden */
+            padding: 10px; /* Komfortabel størrelse for mobil */
+        }
+        .loaned-books {
+            width: 100%; /* Samme bredde som tablet og desktop */
+            display: flex; /* Sikrer, at layoutet er flex */
+            flex-direction: column; /* Kolonne-layout */
+            align-items: center; /* Centreret indhold */
+        }
+ 
+        .loaned-books table {
+            font-size: var(--fontSizeBody); /* Samme fontstørrelse som tablet og desktop */
+            width: 100%; /* Fylder hele bredden */
+        }
+ 
+        .loaned-books th, .loaned-books td {
+            padding: 10px; /* Samme padding som tablet og desktop */
+        }
+ 
+        .loaned-books .book-author-header {
+            display: block; /* Viser forfatterkolonnen som på tablet og desktop */
+        }
+ 
+        .loaned-books .book-title-header {
+            width: 40%; /* Justeret som tablet og desktop */
+        }
+ 
+        .loaned-books .book-days-header {
+            width: 20%; /* Justeret som tablet og desktop */
+        }
+ 
+        .loaned-books tbody .book-author {
+            display: block; /* Viser forfatterinformation som på tablet og desktop */
+        }
+ 
+        h2{
+            font-family: var(--headerFont);
+            font-size: var(--fontSizeBody);
+            color: var(--colorMain);
+        }
+    }
+}

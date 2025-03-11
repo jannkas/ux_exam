@@ -1,0 +1,95 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: var(--smallMargin) auto;
+    width: 100%;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    list-style: none;
+    padding: 0;
+    margin: var(--smallMargin);
+}
+
+.carousel-item {
+    flex: 0 0 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--colorShadow);
+    text-align: center;
+    padding: 1rem;
+    margin-right: var(--smallMargin);
+    background-color: var(--colorComplementary);
+}
+
+.carousel-item h4 {
+    font-size: 1.1rem;
+    color: var(--colorMain);
+    margin: 0.5rem 0;
+}
+
+.carousel-item p {
+    font-size: 0.875rem;
+    color: var(--colorMain);
+}
+
+.carousel-link {
+    text-decoration: none;
+}
+
+.carousel-btn {
+    background-color: var(--colorShadow);
+    color: var(--colorBgMain);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: var(--colorHover);
+}
+
+.carousel-btn.prev {
+    left: 1rem;
+}
+
+.carousel-btn.next {
+    right: 1rem;
+}
+
+.books-showcase > header > h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: var(--colorMain);
+    
+    /* Movil */
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .books-showcase > header > h2 {
+        text-align: left;
+        margin-left: var(--smallMargin); 
+    }
+}

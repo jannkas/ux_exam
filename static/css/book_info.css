@@ -1,0 +1,247 @@
+@import url("_variables.css");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--colorBgMain);
+}
+
+h3, p, a, button, em {
+    font-family: var(--bodyFont);
+    font-size: var(--fontSizeBody);
+}
+
+h1 {
+    font-family: var(--headerFont);
+    font-size: var(--fontSizeSubHeader);
+    color: var(--colorMain);
+}
+
+main {
+    background-color: var(--colorBgMain);
+}
+
+/* ******** Book info ******** */
+.book-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-cover {
+    margin: var(--smallMargin);
+    display: flex;
+    justify-content: center;
+}
+
+.book-cover-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.specific-book-info {
+    background-color: var(--colorComplementary);
+    padding: var(--smallPadding);
+    border-radius: var(--infoCardRadius) var(--infoCardRadius) 0 0;
+}
+
+.specific-book-info h3 {
+    color: var(--colorMain);
+}
+
+.book-pub {
+    margin-bottom: var(--smallMargin);
+    color: var(--colorMain);
+}
+
+.loan-book {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.loan-book .checked {
+    color: var(--colorRatings);
+}
+
+.loan-book button {
+    background-color: var(--accentColor);
+    color: var(--colorBgMain);
+    border: none;
+    border-radius: var(--buttonBorder);
+    padding: var(--buttonPadding);
+    margin-top: var(--smallMargin);
+}
+
+/* ******** Reviews ******** */
+.reviews {
+    padding: var(--smallPadding);
+    background-color: var(--colorComplementary);
+}
+
+.reviews header {
+    margin-bottom: var(--smallMargin);
+    color: var(--colorMain);
+}
+
+.reviews article {
+    box-shadow: 0 1px 2px 0 var(--colorShadow), 0 0 1px 0 var(--colorShadow);
+    border-radius: var(--infoCardRadius);
+    margin-bottom: var(--smallMargin);
+    padding: var(--smallPadding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviews article .fa-quote-left {
+    width: 100%;
+    font-size: var(--fontSizeSubHeader);
+    color: var(--colorMain);
+}
+
+.book-rating {
+    margin-bottom: var(--smallMargin);
+}
+
+.book-rating .checked {
+    color: var(--colorRatings);
+}
+
+.reviews article p {
+    text-align: center;
+    color: var(--colorMain);
+}
+
+.review-user {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--smallMargin);
+}
+
+/* ********************** Big tablet ********************** */
+@media (min-width: 1024px) {
+    .book-details {
+        flex-direction: row;
+    }
+
+    .book-cover {
+        width: 50%;
+        padding: var(--mainMargin);
+        background-color: var(--colorBgMain);
+        margin: 0;
+    }
+
+    .specific-book-info {
+        background-color: var(--colorBgMain);
+        padding: var(--mainPadding);
+        margin-right: var(--mainMargin);
+        width: 50%;
+        border-radius: 0;
+    }
+
+    .loan-book {
+        width: 15rem;
+        justify-content: space-between;
+    }
+
+    .reviews {
+        background-color: var(--colorComplementary);
+        padding: var(--mainPadding);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .reviews header {
+        width: 100%;
+    }
+
+    .reviews article {
+        margin-top: var(--smallMargin);
+        width: 100%;
+    }
+}
+
+/* ********************** Desktop ********************** */
+@media (min-width: 1220px) {
+    .book-details {
+        flex-direction: row;
+    }
+
+    .book-cover {
+        width: 40%;
+    }
+
+    .book-cover img {
+        width: 40%;
+    }
+
+    .specific-book-info {
+        padding: var(--mainPadding) var(--mainPadding) 0 var(--mainPadding);
+        width: 60%;
+    }
+
+    .reviews article {
+        width: 32%;
+    }
+
+    /* Admin Loan History */
+    .loan-history {
+        background-color: var(--colorComplementary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: var(--smallPadding);
+        padding-bottom: var(--mainPadding);
+    }
+
+    .loan-history h2 {
+        font-size: var(--fontSizeSubHeader);
+        font-family: var(--headerFont);
+        color: var(--colorMain);
+        margin-bottom: var(--smallPadding);
+    }
+
+    .loan-history table {
+        width: 60%;
+    }
+
+    .loan-history thead {
+        background-color: var(--accentColor);
+    }
+
+    .loan-history thead tr {
+        text-align: left;
+        color: var(--colorBgMain);
+    }
+
+    .loan-history thead th {
+        padding: var(--tinyPadding);
+    }
+
+    .loan-history tbody {
+        background-color: var(--colorBgMain);
+        color: var(--colorMain);
+    }
+
+    .loan-history tbody td {
+        padding: var(--tinyPadding);
+    }
+}
+
+/* ********************** Mobile Fixes ********************** */
+@media (max-width: 768px) {
+    .book-cover-img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}

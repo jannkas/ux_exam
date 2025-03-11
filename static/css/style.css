@@ -1,0 +1,111 @@
+@import url("_variables.css");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--colorMain);
+    footer{
+        background-color: var(--colorComplementary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: var(--mainPadding);
+        section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 80%;
+            }
+            .so_me{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: var(--smallMargin);
+                color: var(--colorMain);
+                svg{
+                    width: 5rem;
+                    margin: 0 var(--tinyPadding);
+                }
+            }
+            header{
+                h1{
+                    font-family: var(--headerFont);
+                    font-size: var(--fontSizeSubHeader);
+                    margin-bottom: var(--smallMargin);
+                    color: var(--colorMain);
+                }
+            }
+            a, p{
+                text-decoration: none;
+                text-align: center;
+                font-family: var(--bodyFont);
+                font-size: var(--fontSizeLink);
+                padding: var(--tinyPadding);
+                color: var(--colorMain);
+            }
+            a:nth-child(4){
+                margin-bottom: var(--mainMargin);
+            }
+        }
+        .copyright{
+            margin-top: var(--mainMargin);
+        }
+    }
+    /* ********************** tablet small ********************** */
+    @media (min-width:767px){
+        footer{
+            section{
+                .so_me{
+                    width: 10rem;
+                }
+            }
+        }
+    }
+    /* ********************** Big small ********************** */
+    @media (min-width:1024px){
+        footer{
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            section{
+                width: 20%;
+                .so_me{
+                    width: 7rem;
+                }
+                header{
+                    h1{
+                        font-family: var(--headerFont);
+                        font-size: var(--fontSizeLink);
+                        margin-top: var(--mainMargin);
+                        margin-bottom: var(--smallMargin);
+                        color: var(--colorMain);
+                    }
+                }
+                a, p{
+                    text-decoration: none;
+                    text-align: center;
+                    font-family: var(--bodyFont);
+                    font-size: var(--fontSizeBody);
+                    padding: var(--tinyPadding);
+                    color: var(--colorMain);
+                }
+                a:nth-child(4){
+                    margin-bottom: var(--smallMargin);
+                }
+            }
+            .copyright{
+                margin-top: var(--mainMargin);
+                border-top: 1px solid var(--colorMain);
+                padding-top: var(--mainPadding);
+                width: 100%;
+            }
+        }
+    }
+}

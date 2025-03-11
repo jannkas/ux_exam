@@ -1,0 +1,61 @@
+@import url("_variables.css");
+
+/* Style for author results */
+#authorResults {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem; 
+    margin-top: 1rem;
+    padding: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.author-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--colorBorder);
+    border-radius: 4px;
+    background-color: var(--colorBgMain);
+    width: 120px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.author-card:hover {
+    transform: scale(1.05);
+    background-color: var(--colorBgMain);
+}
+
+.author-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    object-fit: cover;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+#searchInput {
+    width: 60%;
+    max-width: 500px;
+    padding: 12px;
+    border: 2px solid var(--colorBorder);
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+
+#authorResults div:hover {
+    transform: scale(1.05);
+}
+

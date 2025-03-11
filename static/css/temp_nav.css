@@ -1,0 +1,455 @@
+@import url("_variables.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--colorBgMain);
+}
+
+/* Navbar styling */
+nav {
+    background-color: var(--colorComplementary);
+    padding: 10px 20px;
+    position: relative;
+}
+
+/* Flex container for navigation */
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    /* Vertikal retning for mobil */
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 7rem;
+    margin-right: 10px;
+}
+
+.logo p {
+    font-family: var(--headerFont);
+}
+
+/* Burger menu styling */
+.burger-menu {
+    display: block;
+    /* Vis burger-ikon */
+    font-size: 4rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Navigation links */
+.nav-links {
+    display: none;
+    /* Skjul menuen som standard */
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    top: 110px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 var(--colorShadow), 0 0 1px 0 var(--colorShadow);
+    padding: var(--smallPadding);
+    background-color: var(--colorComplementary);
+}
+
+/* Vis menu, når den er aktiv */
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links .links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Lidt luft mellem kategorier */
+}
+
+.nav-links li {
+    margin: 10px 0;
+    font-size: var(--fontSizeBody);
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    color: var(--colorMain);
+}
+
+.nav-links a:hover {
+    color: var(--colorComplementary);
+}
+
+/* Search section */
+.search {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.search input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--accentColor);
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: var(--fontSizeBody);
+    border: 1px solid var(--colorMain);
+}
+
+#searchButton {
+    border: none;
+    background-color: var(--colorComplementary);
+    width: 20px;
+}
+
+.nav-hover li:hover {
+    color: var(--accentColor);
+}
+
+/* Auth buttons */
+.auth-buttons {
+    display: flex;
+    flex-direction: column;
+    /* Vertikal retning */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-outline {
+    padding: 10px;
+    border: 1px solid var(--colorMain);
+    background-color: transparent;
+    color: var(--colorMain);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-outline:hover {
+    background-color: var(--accentColor);
+    color: var(--colorComplementary);
+    text-decoration: none;
+}
+
+.hero {
+    background-image: url('../img/lys2.svg');
+    background-size: cover;
+    /* Gør baggrundsbilledet responsivt */
+    background-position: center;
+    /* Centrerer billedet */
+    background-repeat: no-repeat;
+    /* Undgår gentagelse */
+    height: 30rem;
+
+}
+
+.hero-content {
+    max-width: 100%;
+    text-align: center;
+    padding-top: 3rem;
+
+
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    /* Større skrifttype til desktop */
+    color: var(--colorMain);
+    margin-bottom: 20px;
+    align-content: center;
+
+}
+
+.hero-content p {
+    font-size: 1rem;
+    /* Større skrifttype til desktop */
+    color: var(--colorMain);
+    margin-bottom: 20px;
+    align-content: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+}
+
+
+/* Popup overlay */
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:var(--colorShadow);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup indhold */
+.popup-content {
+    background-color: var(--colorBgMain);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--colorShadow);
+    width: 80%;
+    max-width: 600px;
+    max-height: 80%;
+    overflow-y: auto; 
+}
+
+/* Luk-knap */
+.close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--colorMain);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+/* Popup overlay */
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:var(--colorShadow); 
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup indhold */
+.popup-content {
+    position: relative; 
+    background-color: var(--colorBgMain);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--colorMain);
+    width: 80%;
+    max-width: 600px;
+    max-height: 80%;
+    overflow-y: auto; 
+}
+
+/* Luk-knap */
+.close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--colorMain);
+    position: absolute; 
+    top: 10px; 
+    right: 15px; 
+    cursor: pointer;
+    background: none; 
+    border: none; 
+}
+
+/* Fjern understregning fra links */
+.result-link {
+    text-decoration: none;
+    color: inherit; 
+}
+
+/* Resultat-styling (beholder det gamle design) */
+#popupResults .result-item {
+    background-color: var(--colorComplementary);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px var(--colorShadow);
+}
+
+#popupResults .result-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--colorMain);
+}
+
+#popupResults .result-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: var(--colorMain);
+}
+
+
+
+
+/* Responsiv desktop styling */
+@media (min-width: 990px) {
+    .burger-menu {
+        display: none;
+        /* Skjul burger-ikon */
+    }
+
+    nav {
+        background-color: var(--colorComplementary);
+        width: auto;
+        position: relative;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .nav-links {
+        display: flex;
+        /* Vis links som standard */
+        flex-direction: row;
+        align-items: center;
+        position: static;
+        width: auto;
+        right: 0;
+        gap: 50px;
+        /* Lidt luft mellem logo og kategorier */
+        box-shadow: none;
+    }
+
+    .nav-links .links {
+        margin-left: 50px;
+        /* Flyt kategorierne tættere på logo */
+        flex-direction: row;
+    }
+
+    .search {
+        margin: 0;
+        width: 250px;
+        /* Begræns søgefeltets bredde */
+    }
+
+    .auth-buttons {
+        margin-left: auto;
+        /* Sørg for knapperne er i højre side */
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 0;
+    }
+
+    .btn-outline {
+        width: 5rem;
+    }
+
+    .hero {
+        background-image: url('../img/reol.svg');
+        background-size: cover;
+        /* Gør baggrundsbilledet responsivt */
+        background-position: center;
+        /* Centrerer billedet */
+        background-repeat: no-repeat;
+        /* Undgår gentagelse */
+        height: 30rem;
+
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding-top: 10rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        /* Større skrifttype til desktop */
+        color: var(--colorMain);
+        margin-bottom: 20px;
+        align-content: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .burger-menu {
+        display: none;
+        /* Skjul burger-ikon */
+    }
+
+    .nav-container {
+        padding: 0 var(--smallPadding);
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: flex;
+        /* Vis links som standard */
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+        /* Lidt luft mellem logo og kategorier */
+    }
+
+    .search {
+        margin: 0;
+        width: 350px;
+        /* Begræns søgefeltets bredde */
+        margin-left: 160px;
+    }
+
+    .auth-buttons {
+        margin-left: auto;
+        /* Sørg for knapperne er i højre side */
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 0;
+        ;
+    }
+
+    .hero {
+        background-image: url('../img/reol6.svg');
+        background-size: cover;
+        /* Gør baggrundsbilledet responsivt */
+        background-position: center;
+        /* Centrerer billedet */
+        background-repeat: no-repeat;
+        /* Undgår gentagelse */
+        height: 30rem;
+
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding-top: 10rem;
+
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        /* Større skrifttype til desktop */
+        color: var(--colorMain);
+        margin-bottom: 20px;
+        align-content: center;
+    }
+
+}
